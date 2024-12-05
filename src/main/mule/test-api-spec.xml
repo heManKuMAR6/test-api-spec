@@ -7,9 +7,9 @@ http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/m
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<api-gateway:autodiscovery apiId="20090246" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="5a2ba7dd-d60f-4d9f-a617-33e0a1eede37" flowRef="test-api-spec-main" />
-<!-- 	<anypoint-mq:config name="Anypoint_MQ_Config" doc:name="Anypoint MQ Config" doc:id="c5ef059a-7a6b-491f-9ce2-b7fe6a861c01" >
+	<anypoint-mq:config name="Anypoint_MQ_Config" doc:name="Anypoint MQ Config" doc:id="c5ef059a-7a6b-491f-9ce2-b7fe6a861c01" >
 		<anypoint-mq:connection clientId="client_id" clientSecret="client_secret" />
-	</anypoint-mq:config> -->
+	</anypoint-mq:config>
 	<flow name="test-api-spec-main">
         <http:listener config-ref="HTTP_Listener_config" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
